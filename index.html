@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ghulam Dustgeer | Lecturer in Computer Science</title>
+  <meta name="description" content="Professional profile of Ghulam Dustgeer — Lecturer in Computer Science, ML/AI, JavaScript, Python." />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.9);
+      --muted: rgba(255,255,255,.68);
+      --line: rgba(255,255,255,.12);
+      --brand: #8b5cf6;
+      --brand2:#22c55e;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1120px;
+    }
+
+    [data-theme="light"]{
+      --bg: #f6f7fb;
+      --card: rgba(0,0,0,.04);
+      --card2: rgba(0,0,0,.06);
+      --text: rgba(0,0,0,.88);
+      --muted: rgba(0,0,0,.62);
+      --line: rgba(0,0,0,.10);
+      --shadow: 0 10px 24px rgba(0,0,0,.12);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(139,92,246,.35), transparent 60%),
+        radial-gradient(900px 600px at 85% 30%, rgba(34,197,94,.25), transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, rgba(59,130,246,.18), transparent 55%),
+        var(--bg);
+      min-height:100vh;
+    }
+
+    a{ color: inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; text-underline-offset: 4px; }
+
+    /* Layout */
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .nav{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.05));
+      border-bottom: 1px solid var(--line);
+    }
+    [data-theme="light"] .nav{
+      background: linear-gradient(to bottom, rgba(255,255,255,.75), rgba(255,255,255,.35));
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 750;
+      letter-spacing: .2px;
+    }
+    .badge-dot{
+      width: 12px; height: 12px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(139,92,246,.15);
+    }
+    .nav-links{
+      display:flex; gap: 14px; flex-wrap: wrap; justify-content:flex-end;
+      font-size: 14px; color: var(--muted);
+    }
+    .nav-links a{
+      padding: 8px 10px; border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover{
+      border-color: var(--line);
+      text-decoration:none;
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+    }
+    .nav-actions{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      font-weight: 650;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      display:inline-flex; align-items:center; gap:8px;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      border-color: rgba(139,92,246,.55);
+      background: linear-gradient(135deg, rgba(139,92,246,.25), rgba(34,197,94,.12));
+    }
+    .btn.primary:hover{ border-color: rgba(139,92,246,.75); }
+
+    /* Hero */
+    .hero{ padding: 44px 0 26px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{ padding: 22px; overflow:hidden; position:relative; }
+    .hero-main:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(500px 200px at 20% 0%, rgba(139,92,246,.22), transparent 65%),
+                  radial-gradient(520px 240px at 80% 10%, rgba(34,197,94,.18), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-main > *{ position:relative; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .kicker .pill{
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(139,92,246,.20);
+      border: 1px solid rgba(139,92,246,.35);
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing:.2px;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -.6px;
+    }
+    .subtitle{
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 18px;
+      max-width: 70ch;
+    }
+    .hero-actions{ display:flex; gap:10px; flex-wrap: wrap; }
+    .mini{
+      padding: 16px;
+      display:grid;
+      gap: 12px;
+    }
+    .mini .row{
+      display:flex; align-items:flex-start; gap:10px;
+      padding: 12px;
+      border-radius: var(--radius2);
+      background: var(--card2);
+      border: 1px solid var(--line);
+    }
+    .icon{
+      width: 36px; height: 36px; border-radius: 12px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(139,92,246,.30), rgba(34,197,94,.16));
+      border: 1px solid rgba(255,255,255,.14);
+      flex: 0 0 auto;
+    }
+    .row strong{ display:block; font-size: 13px; }
+    .row span{ display:block; font-size: 13px; color: var(--muted); margin-top: 2px; word-break: break-word; }
+
+    /* Sections */
+    section{ padding: 18px 0; }
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      margin: 0 0 10px;
+    }
+    .section-title h2{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .section-title p{ margin:0; color: var(--muted); font-size: 13px; }
+
+    .grid-2{
+      display:grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    @media (max-width: 920px){
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+    .block{ padding: 18px; }
+    .list{ display:grid; gap: 10px; margin: 0; padding: 0; list-style:none; }
+    .item{
+      padding: 14px;
+      border-radius: var(--radius2);
+      background: var(--card2);
+      border: 1px solid var(--line);
+    }
+    .item .top{
+      display:flex; justify-content:space-between; gap: 10px; flex-wrap: wrap;
+      align-items: baseline;
+    }
+    .item .role{ font-weight: 750; }
+    .item .meta{ color: var(--muted); font-size: 13px; }
+    .item .desc{ margin: 10px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .chips{ display:flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip{
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+
+    /* Skills */
+    .skills{
+      display:flex; flex-wrap: wrap; gap: 10px;
+    }
+    .skill{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-size: 13px;
+      color: var(--text);
+      display:flex; align-items:center; gap: 8px;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+
+    /* Projects */
+    .projects-toolbar{
+      display:flex; gap:10px; flex-wrap: wrap; align-items:center;
+      margin-bottom: 10px;
+    }
+    .input{
+      flex: 1 1 240px;
+      padding: 12px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      outline:none;
+    }
+    .input::placeholder{ color: rgba(255,255,255,.45); }
+    [data-theme="light"] .input::placeholder{ color: rgba(0,0,0,.45); }
+
+    .proj-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 1060px){
+      .proj-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px){
+      .proj-grid{ grid-template-columns: 1fr; }
+    }
+    .proj{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform .12s ease;
+    }
+    .proj:hover{ transform: translateY(-2px); }
+    .proj h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      letter-spacing: -.2px;
+    }
+    .proj p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      min-height: 44px;
+    }
+    .proj .links{ margin-top: 10px; display:flex; gap: 10px; flex-wrap: wrap; }
+    .link{
+      font-size: 13px;
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+    }
+
+    /* Footer */
+    footer{ padding: 26px 0 34px; color: var(--muted); font-size: 13px; }
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.75);
+      color: white;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 100;
+      font-size: 13px;
+    }
+    [data-theme="light"] .toast{ background: rgba(20,20,20,.85); }
+    .toast.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>Ghulam Dustgeer</span>
+        </div>
+
+        <div class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="btn" id="themeBtn" type="button" title="Toggle theme">🌓 Theme</button>
+          <a class="btn primary" href="#contact">📩 Hire / Collaborate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="kicker">
+            <span class="pill">Lecturer • Computer Science</span>
+            <span>ML/AI • Web • Python • JavaScript</span>
+          </div>
+
+          <h1>Teaching + Tech, focused on real-world skills.</h1>
+          <p class="subtitle">
+            I’m a Computer Science Lecturer with experience in course delivery, student mentoring, and research work.
+            I also build practical software projects and enjoy applying Machine Learning/AI concepts.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">✨ View Projects</a>
+            <button class="btn" type="button" id="copyEmailBtn">📧 Copy Email</button>
+            <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ghulam-dustgeer-084107127">in LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="card mini" aria-label="Quick info">
+          <div class="row">
+            <div class="icon" aria-hidden="true">📍</div>
+            <div>
+              <strong>Location</strong>
+              <span>Pakistan (Remote-ready)</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="icon" aria-hidden="true">🏫</div>
+            <div>
+              <strong>Current Focus</strong>
+              <span>Remote teaching • CS / AI / ML</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="icon" aria-hidden="true">🏅</div>
+            <div>
+              <strong>Award</strong>
+              <span>Gold Medalist (COMSATS)</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="icon" aria-hidden="true">🧩</div>
+            <div>
+              <strong>Top Skills</strong>
+              <span>Python • JS • ML/AI • MySQL • Git</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT / EXPERIENCE -->
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Short professional summary</p>
+        </div>
+
+        <div class="card block">
+          <p style="margin:0; color:var(--muted); line-height:1.7;">
+            Lecturer in Computer Science with experience teaching and advising students, developing course materials,
+            and collaborating on research. Strong interest in Machine Learning, Artificial Intelligence, and building
+            modern web solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Experience</h2>
+          <p>Academic roles</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card block">
+            <ul class="list">
+              <li class="item">
+                <div class="top">
+                  <span class="role">Lecturer in Computer Science — Govt Graduate College (Samundri)</span>
+                  <span class="meta">Apr 2018 – Jul 2024</span>
+                </div>
+                <p class="desc">
+                  Developed course materials (syllabi, lectures, assignments, exams), provided academic advising,
+                  and collaborated on research projects. Remote teaching-ready with a structured approach to delivery.
+                </p>
+                <div class="chips">
+                  <span class="chip">Teaching</span>
+                  <span class="chip">Course Design</span>
+                  <span class="chip">Student Mentoring</span>
+                  <span class="chip">Research Collaboration</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="top">
+                  <span class="role">College Trainee Internship — Govt Graduate College (Chowk Azam)</span>
+                  <span class="meta">Sep 2016 – Mar 2018</span>
+                </div>
+                <p class="desc">
+                  Taught intermediate students, performed lab work, and supported admissions data entry operations.
+                </p>
+                <div class="chips">
+                  <span class="chip">Teaching</span>
+                  <span class="chip">Lab Work</span>
+                  <span class="chip">Data Entry</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card block">
+            <h3 style="margin:0 0 10px; font-size:16px;">What I can teach (Remote)</h3>
+            <p style="margin:0 0 10px; color:var(--muted); line-height:1.65;">
+              Machine Learning • Artificial Intelligence • Data Mining • Programming Fundamentals • Web Development
+            </p>
+
+            <h3 style="margin:14px 0 10px; font-size:16px;">Highlights</h3>
+            <ul style="margin:0; padding-left: 18px; color:var(--muted); line-height:1.8;">
+              <li>Undergraduate-level course delivery and assessment design</li>
+              <li>Hands-on approach: examples, mini-projects, and practical labs</li>
+              <li>Clear communication and student mentoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-title">
+          <h2>Education</h2>
+          <p>Academic background</p>
+        </div>
+
+        <div class="card block">
+          <ul class="list">
+            <li class="item">
+              <div class="top">
+                <span class="role">BS (Computer Science) — COMSATS Institute of Information Technology</span>
+                <span class="meta">Sep 2012 – Jul 2016</span>
+              </div>
+              <p class="desc">Gold Medalist. Strong foundation in Computer Science concepts and research.</p>
+            </li>
+
+            <li class="item">
+              <div class="top">
+                <span class="role">Teacher Training Program — Higher Education Department (Punjab)</span>
+                <span class="meta">Jun 2018</span>
+              </div>
+              <p class="desc">Professional training for academic teaching practices.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Tools & technologies</p>
+        </div>
+
+        <div class="card block">
+          <div class="skills" id="skillsWrap">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="container">
+        <div class="section-title">
+          <h2>Publications</h2>
+          <p>Selected research work</p>
+        </div>
+
+        <div class="card block">
+          <ul class="list">
+            <li class="item">
+              <div class="top">
+                <span class="role">IoT based smart home: Security challenges, requirements and solutions</span>
+                <span class="meta">2017</span>
+              </div>
+              <p class="desc">
+                Reviewed smart home security challenges and proposed security goals/solutions with forecasting insights.
+              </p>
+            </li>
+
+            <li class="item">
+              <div class="top">
+                <span class="role">A Novel Framework for Plagiarism Detection: Urdu Language Case Study</span>
+                <span class="meta">2018</span>
+              </div>
+              <p class="desc">
+                Proposed a framework and corpus for Urdu plagiarism detection and evaluated similarity methods.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Filter and explore</p>
+        </div>
+
+        <div class="projects-toolbar">
+          <input class="input" id="projectSearch" placeholder="Search projects (e.g., Python, website, TensorFlow)..." />
+          <button class="btn" id="resetProjects" type="button">↺ Reset</button>
+        </div>
+
+        <div class="proj-grid" id="projectGrid" aria-label="Project list"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Let’s connect</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card block">
+            <ul class="list">
+              <li class="item">
+                <div class="top">
+                  <span class="role">Email</span>
+                  <span class="meta"><a href="mailto:guldustgeer124@gmail.com">guldustgeer124@gmail.com</a></span>
+                </div>
+                <p class="desc">Fastest way to reach me for remote teaching opportunities.</p>
+                <div class="chips">
+                  <button class="btn" type="button" id="copyEmailBtn2">📋 Copy Email</button>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="top">
+                  <span class="role">Phone</span>
+                  <span class="meta"><a href="tel:+923063938652">(+92) 0306 3938652</a></span>
+                </div>
+                <p class="desc">Available during Pakistan business hours (flexible for remote).</p>
+              </li>
+
+              <li class="item">
+                <div class="top">
+                  <span class="role">LinkedIn</span>
+                  <span class="meta"><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/ghulam-dustgeer-084107127">View Profile</a></span>
+                </div>
+                <p class="desc">Connect for remote lecturer / instructor roles.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card block">
+            <h3 style="margin:0 0 10px; font-size:16px;">Remote Teaching Note</h3>
+            <p style="margin:0; color:var(--muted); line-height:1.7;">
+              I’m based in Pakistan and available for remote teaching and academic collaboration. I can deliver
+              live classes, create structured LMS content, and design assessments aligned with program outcomes.
+            </p>
+
+            <div style="height:12px"></div>
+
+            <h3 style="margin:0 0 10px; font-size:16px;">Quick Actions</h3>
+            <div class="hero-actions">
+              <a class="btn primary" href="mailto:guldustgeer124@gmail.com?subject=Remote%20Lecturer%20Opportunity">✉️ Email Me</a>
+              <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ghulam-dustgeer-084107127">in Open LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center;">
+          <span>© <span id="year"></span> Ghulam Dustgeer • Web Profile</span>
+          <span>Built with HTML/CSS/JavaScript • Smooth scroll • Theme toggle</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied!</div>
+
+  <script>
+    // ------- Data (edit anytime) -------
+    const PROFILE = {
+      name: "Ghulam Dustgeer",
+      email: "guldustgeer124@gmail.com",
+      skills: [
+        "Git", "Python", "JavaScript", "HTML", "CSS", "Bootstrap", "MySQL",
+        "Machine Learning", "Artificial Intelligence", "Generative AI"
+      ],
+      projects: [
+        {
+          title: "Heat Diffusion in Python",
+          tags: ["Python", "Simulation"],
+          desc: "Numerical/visual exploration of heat diffusion concepts in Python."
+        },
+        {
+          title: "Email Data Extraction for Garage System (Python)",
+          tags: ["Python", "Automation"],
+          desc: "Extracted/processed email data for a garage system workflow."
+        },
+        {
+          title: "Matplotlib Work (Python)",
+          tags: ["Python", "Visualization"],
+          desc: "Data visualization exercises and plotting practice using Matplotlib."
+        },
+        {
+          title: "TensorFlow Implementation",
+          tags: ["Python", "TensorFlow", "ML"],
+          desc: "Hands-on implementation and learning tasks using TensorFlow."
+        },
+        {
+          title: "The City Enterprise (Website)",
+          tags: ["Web", "Production"],
+          desc: "Live web project.",
+          link: "https://thecityenterprise.com/"
+        },
+        {
+          title: "Knives Fusion (Website)",
+          tags: ["Web", "Production"],
+          desc: "Live web project.",
+          link: "https://knivesfusion.com/"
+        },
+        {
+          title: "ufleet (Website)",
+          tags: ["Web", "Client"],
+          desc: "Project reference link.",
+          link: "https://www.altec.com/altec-nueco/"
+        },
+        {
+          title: "Online Auction System (Final Year Project)",
+          tags: ["CS", "Project"],
+          desc: "Final year project: online auction system."
+        }
+      ]
+    };
+
+    // ------- Helpers -------
+    const $ = (sel) => document.querySelector(sel);
+    const toast = $("#toast");
+    function showToast(msg="Copied!") {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1200);
+    }
+
+    // ------- Theme toggle -------
+    const themeBtn = $("#themeBtn");
+    function setTheme(theme){
+      document.body.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+    themeBtn.addEventListener("click", () => {
+      const cur = document.body.getAttribute("data-theme") || "dark";
+      setTheme(cur === "dark" ? "light" : "dark");
+    });
+    const saved = localStorage.getItem("theme");
+    if(saved) setTheme(saved);
+
+    // ------- Skills render -------
+    const skillsWrap = $("#skillsWrap");
+    PROFILE.skills.forEach(s => {
+      const el = document.createElement("div");
+      el.className = "skill";
+      el.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${s}</span>`;
+      skillsWrap.appendChild(el);
+    });
+
+    // ------- Projects render + filter -------
+    const grid = $("#projectGrid");
+    function renderProjects(list){
+      grid.innerHTML = "";
+      list.forEach(p => {
+        const card = document.createElement("article");
+        card.className = "proj";
+        const tagChips = (p.tags || []).map(t => `<span class="chip">${t}</span>`).join("");
+        const linkBtn = p.link ? `<a class="link" href="${p.link}" target="_blank" rel="noopener">🔗 Visit</a>` : "";
+        card.innerHTML = `
+          <h3>${p.title}</h3>
+          <p>${p.desc || ""}</p>
+          <div class="chips">${tagChips}</div>
+          <div class="links">
+            ${linkBtn}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    renderProjects(PROFILE.projects);
+
+    const search = $("#projectSearch");
+    function normalize(str){ return (str||"").toLowerCase(); }
+    search.addEventListener("input", () => {
+      const q = normalize(search.value);
+      const filtered = PROFILE.projects.filter(p => {
+        const hay = normalize(p.title) + " " + normalize(p.desc) + " " + normalize((p.tags||[]).join(" "));
+        return hay.includes(q);
+      });
+      renderProjects(filtered);
+    });
+
+    $("#resetProjects").addEventListener("click", () => {
+      search.value = "";
+      renderProjects(PROFILE.projects);
+      showToast("Reset");
+    });
+
+    // ------- Copy email -------
+    async function copyEmail(){
+      try{
+        await navigator.clipboard.writeText(PROFILE.email);
+        showToast("Email copied");
+      }catch(e){
+        // fallback
+        const t = document.createElement("textarea");
+        t.value = PROFILE.email;
+        document.body.appendChild(t);
+        t.select();
+        document.execCommand("copy");
+        document.body.removeChild(t);
+        showToast("Email copied");
+      }
+    }
+    $("#copyEmailBtn").addEventListener("click", copyEmail);
+    $("#copyEmailBtn2").addEventListener("click", copyEmail);
+
+    // Year
+    $("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
